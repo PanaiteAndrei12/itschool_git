@@ -26,6 +26,11 @@ def submit():
     except:
         messagebox.showerror(title="ERROR!", message="Enter a valid number or a valid currency!!!")
 
+def reset():
+    et1.delete(0,END)
+    et2.delete(0,END)
+    et3.delete(0,END)
+
 
 #Label 1
 lb1 = tk.Label(root, text="CURRENCY CONVERTER", fg="#FFFFFF", bg="#4863A0", font="Times 20 bold").place(x=80, y=20)
@@ -45,8 +50,12 @@ lb4 = tk.Label(root, text="To: ", fg="#FFFFFF", bg="#4863A0", font="Times 18 bol
 et3 = tk.Entry(root)
 et3.place(x=300, y=190)
 
-#Button
+#Button 1
 bt1 = tk.Button(root, text="CONVERT",fg="#FFFFFF", bg="#C19A6B", font="Times 15 bold", command= submit).place(x=60, y=240)
+
+#Button 2
+bt2 = tk.Button(root, text="RESET",fg="#FFFFFF", bg="#C19A6B", font="Times 15 bold", command= reset).place(x=300, y=240)
+
 
 
 root.mainloop()
